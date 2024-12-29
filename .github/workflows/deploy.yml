@@ -9,6 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Configure Git
+        run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/michel-montejuado/scoundrel
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install dependencies
