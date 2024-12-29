@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Configure Git
-        run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/michel-montejuado/scoundrel
+        run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/michel-montejuado/scoundrel.git
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install dependencies
