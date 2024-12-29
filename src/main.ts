@@ -1,24 +1,28 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import { Boot } from '@/scenes/Boot';
+import { MainGame as MainGame } from '@/scenes/MainGame';
+import { GameOver } from '@/scenes/GameOver';
+import { MainMenu } from '@/scenes/MainMenu';
+import { Preloader } from '@/scenes/Preloader';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+import { Game } from "phaser";
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+//  Find out more information about the Game Config at:
+//  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
+export default new Game({
+  type: Phaser.AUTO,
+  width: 1024,
+  height: 768,
+  parent: 'game-container',
+  backgroundColor: '#028af8',
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH
+  },
+  scene: [
+    Boot,
+    Preloader,
+    MainMenu,
+    MainGame,
+    GameOver
+  ]
+});
