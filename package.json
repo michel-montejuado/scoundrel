@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/michel-montejuado/scoundrel/issues"
   },
-  "homepage": "https://github.com/michel-montejuado/scoundrel#readme",
+  "homepage": "https://michel-montejuado.github.io/scoundrel/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
