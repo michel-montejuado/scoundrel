@@ -4,17 +4,17 @@ import { resolve } from "path"
 
 // https://vite.dev/config/
 export default defineConfig({
-	base: process.env.NODE_ENV === 'production' ? "/scoundrel" : "/",
-	logLevel: 'info',
+	base: process.env.NODE_ENV === "production" ? "/scoundrel/" : "/",
+	logLevel: "info",
 	build: {
 		rollupOptions: {
 			output: {
 				manualChunks: {
-					phaser: ['phaser']
+					phaser: ["phaser"]
 				}
 			}
 		},
-		minify: process.env.NODE_ENV === 'production' ? 'terser' : false,
+		minify: process.env.NODE_ENV === "production" ? "terser" : false,
 		terserOptions: {
 			compress: {
 				passes: 2
