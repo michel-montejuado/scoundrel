@@ -6,23 +6,28 @@ import { Preloader } from "@/scenes/Preloader";
 
 import { Game } from "phaser";
 
-//  Find out more information about the Game Config at:
-//  https://newdocs.phaser.io/docs/3.70.0/Phaser.Types.Core.GameConfig
-export default new Game({
-  type: Phaser.AUTO,
-  width: 1024,
-  height: 768,
-  parent: "game-container",
-  backgroundColor: "#028af8",
-  scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH
-  },
-  scene: [
-    Boot,
-    Preloader,
-    MainMenu,
-    MainGame,
-    GameOver
-  ]
+document.addEventListener("DOMContentLoaded", function () {
+  //  Find out more information about the Game Config at:
+  //  https://newdocs.phaser.io/docs/3.87.0/Phaser.Types.Core.GameConfig
+  new Game({
+    type: Phaser.AUTO,
+    width: 1024,
+    height: 768,
+    title: "Scoundrel",
+    pixelArt: true,
+    roundPixels: true,
+    parent: "game-container",
+    backgroundColor: "#028af8",
+    scale: {
+      mode: Phaser.Scale.FIT,
+      autoCenter: Phaser.Scale.CENTER_BOTH
+    },
+    scene: [
+      Boot,
+      Preloader,
+      MainMenu,
+      MainGame,
+      GameOver
+    ]
+  });
 });
