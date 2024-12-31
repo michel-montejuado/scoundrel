@@ -22,6 +22,7 @@
     "deploy": "gh-pages -d dist -u \"github-actions-bot <support+actions@github.com>\""
   },
   "dependencies": {
+    "bitecs": "^0.3.40",
     "phaser": "^3.87.0"
   },
   "devDependencies": {
