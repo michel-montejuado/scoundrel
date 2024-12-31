@@ -1,9 +1,9 @@
+import { Scene } from "phaser";
+
 import type {
     IWorld,
     System
 } from "bitecs"
-
-import { Scene } from "phaser";
 
 import {
     createWorld,
@@ -48,6 +48,8 @@ export class MainGame extends Scene {
     }
 
     create() {
+        this.add.image(512, 384, "background");
+
         const { width, height } = this.scale
 
         this.world = createWorld()
